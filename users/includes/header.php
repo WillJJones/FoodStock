@@ -115,10 +115,6 @@ else $pageTitle = '';
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
 
 	<?php
 	if(file_exists($abs_us_root.$us_url_root.'usersc/includes/head_tags.php')){
@@ -136,25 +132,7 @@ else $pageTitle = '';
 	}
 	?>
 
-	<title><?= (($pageTitle != '') ? $pageTitle : ''); ?> <?=$settings->site_name?></title>
 
-	<!-- Bootstrap Core CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<!-- AKA Primary CSS -->
-	<link href="<?=$us_url_root?><?=str_replace('../','',$settings->us_css1);?>" rel="stylesheet">
-
-	<!-- Template CSS -->
-	<!-- AKA Secondary CSS -->
-	<link href="<?=$us_url_root?><?=str_replace('../','',$settings->us_css2);?>" rel="stylesheet">
-
-	<!-- Your Custom CSS Goes Here!-->
-	<link href="<?=$us_url_root?><?=str_replace('../','',$settings->us_css3);?>" rel="stylesheet">
-
-	<!-- Custom Fonts/Animation/Styling-->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<!-- jQuery Fallback -->
 	<script type="text/javascript">
 	if (typeof jQuery == 'undefined') {
@@ -162,7 +140,7 @@ else $pageTitle = '';
 	}
 	</script>
 
-	<?php require_once $abs_us_root.$us_url_root.'usersc/includes/bootstrap_corrections.php'; ?>
+
 
 </head>
 

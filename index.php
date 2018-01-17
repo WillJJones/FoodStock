@@ -22,8 +22,60 @@
                 <main>
                   <div class="container">
 
+
+
                     <h3>Welcome <?php  echo $user->data()->fname; ?>!</h3>
                     <p>This is a test bit of wording to see how the site looks with normal paragraph text.</p>
+
+
+
+                      <?php
+                      require_once 'users/init.php';
+                      $db = DB::getInstance();
+                      //PHP Goes Here!
+
+                      if(isset($_GET['id'])) $userID = Input::get('id');
+                      else $userID = $user->data()->id;
+
+                      $userQ = $db->query("SELECT * FROM profiles LEFT JOIN users ON user_id = users.id WHERE user_id = ?",array($userID));
+                      if ($userQ->count() > 0) {
+                      	$thatUser = $userQ->first();
+
+                      	if($user->isLoggedIn() && $user->data()->id == $userID)
+                      		{
+                      		$editbio = ' <small><a href="edit_profile.php">Edit Bio</a></small>';
+                      		}
+                      	else
+                      		{
+                      		$editbio = '';
+                      		}
+
+                      	$ususername = ucfirst($thatUser->username)."'s Profile";
+                      	$grav = get_gravatar(strtolower(trim($thatUser->email)));
+                      	$useravatar = '<img src="'.$grav.'" class="circle responsive-img" alt="'.$ususername.'">';
+                      	$usbio = html_entity_decode($thatUser->bio);
+                      	//Uncomment out the line below to see what's available to you.
+                      	//dump($thisUser);
+                      	}
+                      else
+                      	{
+                      	$ususername = '404';
+                      	$usbio = 'User not found';
+                      	$useravatar = '';
+                      	$editbio = ' <small><a href="/">Go to the homepage</a></small>';
+                      	}
+                      ?>
+
+                      <div class="row">
+                           <div class="col s6 offset-s6">
+                             <div class="card-panel teal">
+                                     <span class="white-text">
+                                       <h5>Your Profile</h5>
+                                       <?php echo $useravatar;?>
+                                     </span>
+                             </div>
+                           </div>
+                         </div>
 
 
 

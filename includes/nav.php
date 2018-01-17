@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo center">FoodStock</a>
+    <a class="brand-logo center">FoodStock</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="users/login.php">Log in</a></li>
       <li><a href="something.php">Test Breadcrumbs</a></li>
@@ -12,7 +12,8 @@
 <nav>
   <div class="nav-wrapper">
     <div class="col s12">
-      <?php
+      <center>
+        <?php
       function breadcrumbs($separator = ' &raquo; ', $home = 'Home') {
 
           $path = array_filter(explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
@@ -44,6 +45,7 @@
       echo breadcrumbs();
 
       ?>
+ </center>
     </div>
   </div>
 </nav>
