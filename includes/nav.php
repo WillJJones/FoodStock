@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Logo</a>
+    <a href="#" class="brand-logo center">FoodStock</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="users/login.php">Log in</a></li>
       <li><a href="something.php">Test Breadcrumbs</a></li>
